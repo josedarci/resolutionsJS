@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Watching Portion</title>
+  <!-- Inclua os links para os arquivos do Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="card-title">Video Watching Portion</h1>
+        <p class="card-text">You have been watching a video for some time. Knowing the total video duration, find out what portion of the video you have already watched.</p>
+        
+        <h3>Example:</h3>
+        <p>For part = "02:20:00" and total = "07:00:00", the output should be solution(part, total) = [1, 3].<br>You have watched 1 / 3 of the whole video.</p>
+        
+        <h3>Input/Output:</h3>
+        <p><strong>Input:</strong> string part<br>A string of the following format "hh:mm:ss" representing the time you have been watching the video.</p>
+        <p><strong>Input:</strong> string total<br>A string of the following format "hh:mm:ss" representing the total video duration.</p>
+        <p><strong>Output:</strong> array.integer<br>An array of the following format [a, b] (where a / b is a reduced fraction).</p>
+        
+        <pre><code>function solution(part, total) {
+    // Dividir as strings de tempo em horas, minutos e segundos
+    const [parteHoras, parteMinutos, parteSegundos] = part.split(":").map(Number);
+    const [totalHoras, totalMinutos, totalSegundos] = total.split(":").map(Number);
+    
+    // Calcular o tempo total em segundos para ambas as partes e o total
+    const parteTotalSegundos = (parteHoras * 3600) + (parteMinutos * 60) + parteSegundos;
+    const totalTotalSegundos = (totalHoras * 3600) + (totalMinutos * 60) + totalSegundos;
+    
+    // Calcular a fração do vídeo assistido
+    const mdc = calcularMDC(parteTotalSegundos, totalTotalSegundos);
+    const numerador = parteTotalSegundos / mdc;
+    const denominador = totalTotalSegundos / mdc;
+    
+    return [numerador, denominador];
+}
+
+// Função para calcular o máximo divisor comum (MDC)
+function calcularMDC(a, b) {
+    if (b === 0) {
+        return a;
+    }
+    return calcularMDC(b, a % b);
+}</code></pre>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <!-- Inclua os links para os arquivos do Bootstrap JS (opcional, para recursos interativos) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
