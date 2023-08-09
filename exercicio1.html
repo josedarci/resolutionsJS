@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Validation</title>
+    <!-- Inclua os links para os arquivos do Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Check if Time is Valid</h1>
+      <p>
+        Check if the given string is a correct time representation of the
+        24-hour clock.
+      </p>
+      <h3>Example:</h3>
+      <p>For time = "13:58", the output should be solution(time) = true;</p>
+      <p>For time = "25:51", the output should be solution(time) = false;</p>
+      <p>For time = "02:76", the output should be solution(time) = false.</p>
+      <h3>Input/Output</h3>
+      <p><strong>Input:</strong> string time</p>
+      <p>
+        A string representing time in HH:MM format. It is guaranteed that the
+        first two characters, as well as the last two characters, are digits.
+      </p>
+      <p><strong>Output:</strong> boolean</p>
+      <p>true if the given representation is correct, false otherwise.</p>
+      <h4>JavaScript Syntax Tips:</h4>
+      <pre><code>// Prints help message to the console
+// Returns a string
+function helloWorld(name) {
+    console.log("This prints to the console when you Run Tests");
+    return "Hello, " + name;
+}</code></pre>
+
+      <br /><br />
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Check if Time is Valid</h1>
+          <p class="card-text">
+            Check if the given string is a correct time representation of the
+            24-hour clock.
+          </p>
+          <pre><code>function solution(time) {
+// Divida a string de tempo fornecida em horas e minutos
+const [horas, minutos] = time.split(":");
+
+// Converta horas e minutos para números
+const horasNum = parseInt(horas);
+const minutosNum = parseInt(minutos);
+
+// Verifique se horas e minutos estão dentro da faixa válida
+if (horasNum >= 0 && horasNum < 24 && minutosNum >= 0 && minutosNum < 60) {
+    return true; // A representação de tempo está correta
+} else {
+    return false; // A representação de tempo está incorreta
+}
+}</code></pre>
+        </div>
+      </div>
+      <p>
+        This JavaScript function checks if the given time representation is
+        correct for a 24-hour clock.
+      </p>
+
+      <h3>Explanation:</h3>
+      <p>
+        This is a function named <code>solution</code> that takes a parameter
+        named <code>time</code>. It is designed to check if the time
+        representation (in the HH:MM format) is valid for a 24-hour clock.
+      </p>
+
+      <h3>Comments:</h3>
+      <pre><code>// Function that checks if the time representation is correct
+  function solution(time) {
+      // Split the provided time string into hours and minutes
+      const [hours, minutes] = time.split(":");
+      
+      // Convert hours and minutes to integers
+      const hoursNum = parseInt(hours);
+      const minutesNum = parseInt(minutes);
+      
+      // Check if hours and minutes are within the valid range
+      if (hoursNum >= 0 && hoursNum < 24 && minutesNum >= 0 && minutesNum < 60) {
+          return true; // The time representation is correct
+      } else {
+          return false; // The time representation is incorrect
+      }
+  }</code></pre>
+
+      <h3>Translation:</h3>
+      <pre><code>// Função que verifica se a representação do tempo está correta
+  function solution(time) {
+      // Divide a string de tempo fornecida em horas e minutos
+      const [horas, minutos] = time.split(":");
+      
+      // Converte horas e minutos em números inteiros
+      const horasNum = parseInt(horas);
+      const minutosNum = parseInt(minutos);
+      
+      // Verifica se horas e minutos estão dentro da faixa válida
+      if (horasNum >= 0 && horasNum < 24 && minutosNum >= 0 && minutosNum < 60) {
+          return true; // A representação do tempo está correta
+      } else {
+          return false; // A representação do tempo está incorreta
+      }
+  }</code></pre>
+    </div>
+
+    <!-- Inclua os links para os arquivos do Bootstrap JS (opcional, para recursos interativos) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
