@@ -1,4 +1,4 @@
-Solução: function solution(part, total) {
+ function solution(part, total) {
   // Dividir as strings de tempo em horas, minutos e segundos
   const [parteHoras, parteMinutos, parteSegundos] = part.split(":").map(Number);
   const [totalHoras, totalMinutos, totalSegundos] = total
