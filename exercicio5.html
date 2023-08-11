@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum of Digits</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h5>Sum of Digits</h5>
+    </div>
+    <div class="card-body">
+      You are given a two-digit integer n. Return the sum of its digits.
+      <p><strong>Example:</strong></p>
+      <p>For n = 29, the output should be solution(n) = 11.</p>
+      <p><strong>Input/Output:</strong></p>
+      <ul>
+        <li>[execution time limit] 4 seconds (js)</li>
+        <li>[memory limit] 1 GB</li>
+        <li>[input] integer n<br> A positive two-digit integer.<br>Guaranteed constraints:<br>10 ≤ n ≤ 99.</li>
+        <li>[output] integer<br>The sum of the first and second digits of the input number.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5>Solution</h5>
+    </div>
+    <div class="card-body">
+      <pre><code>
+function solution(n) {
+  // Extrai o dígito das dezenas e o dígito das unidades
+  let dígitoDezenas = Math.floor(n / 10);
+  let dígitoUnidades = n % 10;
+
+  // Calcula a soma dos dígitos
+  let soma = dígitoDezenas + dígitoUnidades;
+
+  return soma;
+}
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <p>The solution function calculates the sum of the first and second digits of the given two-digit number.</p>
+    </div>
+  </div>
+  <p><a href="index.html">&lt; Voltar para a página inicial</a></p>
+</div>
+
+</body>
+</html>
