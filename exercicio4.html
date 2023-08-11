@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curious Clock</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h5>Curious Clock</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Benjamin recently bought a digital clock at a magic trick shop. The
+            seller never told Ben what was so special about it, but mentioned
+            that one day Benjamin would be faced with a surprise.
+          </p>
+          <p>
+            Indeed, the clock did surprise Benjamin: without warning, at
+            someTime the clock suddenly started going in the opposite direction!
+            Unfortunately, Benjamin has an important meeting very soon, and
+            knows that at leavingTime he should leave the house so as to not be
+            late. Ben spent all his money on the clock, so has to figure out
+            what time his clock will show when it's time to leave.
+          </p>
+          <p>
+            Given the someTime at which the clock started to go backwards, find
+            out what time will be shown on the curious clock at leavingTime.
+          </p>
+          <p>
+            For your convenience, here is the list of months lengths (from
+            January to December, respectively):
+          </p>
+          <p>
+            • Months lengths: 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31.
+          </p>
+          <p>Please note that in leap years February has 29 days.</p>
+          <p>Example:</p>
+          <p>
+            For someTime = "2016-08-26 22:40" and leavingTime = "2016-08-29
+            10:00", the output should be solution(someTime, leavingTime) =
+            "2016-08-24 11:20".
+          </p>
+          <p>
+            There are 2 days, 11 hours and 20 minutes till the meeting. Thus,
+            the clock will show 2016-08-24 11:20 at the leavingTime.
+          </p>
+        </div>
+      </div>
+      <!-- Additional card for the solution -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <h5>Solution</h5>
+        </div>
+        <div class="card-body">
+          <pre><code>
+    function solution(someTime, leavingTime) {
+        // Converte as strings de someTime e leavingTime em objetos Date para cálculos.
+        const startTime = new Date(someTime);
+        const endTime = new Date(leavingTime);
+    
+        // Calcula a diferença em milissegundos entre os dois horários.
+        const timeDiff = endTime - startTime;
+    
+        // Subtrai a diferença de tempo do horário inicial para obter o horário final no relógio curioso.
+        const finalTime = new Date(startTime.getTime() - timeDiff);
+    
+        // Formata o horário final como "AAAA-MM-DD HH:MM" e retorna.
+        const formattedTime = finalTime.toISOString().slice(0, 16).replace("T", " ");
+        return formattedTime;
+    }
+    
+    // Testa a função com o exemplo fornecido.
+    const someTime = "2016-08-26 22:40";
+    const leavingTime = "2016-08-29 10:00";
+    console.log(solution(someTime, leavingTime)); // Deve imprimir "2016-08-24 11:20"
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
