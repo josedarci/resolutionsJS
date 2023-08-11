@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Largest Number with N Digits</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h5>Largest Number with N Digits</h5>
+    </div>
+    <div class="card-body">
+      Given an integer n, return the largest number that contains exactly n digits.
+      <p><strong>Example:</strong></p>
+      <p>For n = 2, the output should be solution(n) = 99.</p>
+      <p><strong>Input/Output:</strong></p>
+      <ul>
+        <li>[execution time limit] 4 seconds (js)</li>
+        <li>[memory limit] 1 GB</li>
+        <li>[input] integer n<br>Guaranteed constraints:<br>1 ≤ n ≤ 9.</li>
+        <li>[output] integer<br>The largest integer of length n.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-header">
+      <h5>Solution</h5>
+    </div>
+    <div class="card-body">
+      <pre><code>
+function solution(n) {
+  // Calculate the largest number with n digits
+  let largestNumber = Math.pow(10, n) - 1;
+
+  return largestNumber;
+}
+      </code></pre>
+      <p><strong>Explanation:</strong></p>
+      <p>This JavaScript function, called solution, takes an integer n as input and returns the largest possible number with n digits.</p>
+      <ul>
+        <li><code>Math.pow(10, n)</code>: This expression calculates 10 raised to the power of n. This results in a number that has n digits, where all digits are 0 except the most significant digit, which is 1.</li>
+        <li><code>Math.pow(10, n) - 1</code>: Subtracting 1 from the previous result adjusts the value to the largest number with n digits, all of which are 9.</li>
+        <li><code>return largestNumber;</code>: The function returns the largest possible number with n digits.</li>
+      </ul>
+      <p>Por exemplo, se n for 3, a função calculará o maior número possível com 3 dígitos, que é 999. Se n for 4, o resultado será 9999, e assim por diante. Essa função é útil para calcular limites superiores com base no número de dígitos em problemas de programação ou cálculos matemáticos.</p>
+      <p>For example, if n is 3, the function will calculate the largest possible number with 3 digits, which is 999. If n is 4, the result will be 9999, and so on. This function is useful for calculating upper bounds based on the number of digits in programming problems or mathematical calculations.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
