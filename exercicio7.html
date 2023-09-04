@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candies</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h5>Candies</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            n children have got m pieces of candy. They want to eat as much
+            candy as they can, but each child must eat exactly the same amount
+            of candy as any other child. Determine how many pieces of candy will
+            be eaten by all the children together. Individual pieces of candy
+            cannot be split. Example For n = 3 and m = 10, the output should be
+            solution(n, m) = 9. Each child will eat 3 pieces. So the answer is
+            9.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-header">
+          <h5>Solution</h5>
+        </div>
+        <div class="card-body">
+          <pre><code>
+        function solution(n, m) {
+            // Calcular o número de pedaços de doce que cada criança vai comer
+            let docesPorCrianca = Math.floor(m / n);
+          
+            // Calcular o número total de pedaços de doce consumidos por todas as crianças
+            let totalDocesConsumidos = docesPorCrianca * n;
+          
+            return totalDocesConsumidos;
+          }
+          
+      </code></pre>
+          <p><strong>Explanation:</strong></p>
+          <p>
+            Esta função em JavaScript, chamada solution, recebe dois números inteiros como entrada: n (representando o número de crianças) e m (representando o número total de pedaços de doce disponíveis).
+            </p>
+            <ul><li>Math.floor(m / n): Esta expressão calcula quantos pedaços de doce cada criança vai comer, arredondando para baixo o resultado da divisão de m por n. Isso garante que cada criança receba uma quantidade igual de doces.</li>
+                <li>docesPorCrianca * n: Multiplicar a quantidade de doces que cada criança come pelo número total de crianças (n) resulta no número total de doces consumidos por todas as crianças.</li>
+                <li>return totalDocesConsumidos;: A função retorna o número total de pedaços de doce consumidos por todas as crianças.</li>
+            </ul>
+            <p>Por exemplo, se houver 5 crianças e 20 pedaços de doce disponíveis, a função calculará que cada criança vai comer 4 pedaços de doce (20 / 5 = 4), e o número total de doces consumidos será 20 (4 * 5 = 20). Essa função é útil para distribuir quantidades equitativas de recursos entre um grupo de elementos, como no caso de doces entre crianças.
+            </p>
+          </p>
+        </div>
+      </div>
+      <p><a href="index.html">&lt; Voltar para a página inicial</a></p>
+    </div>
+  </body>
+</html>
